@@ -12,6 +12,6 @@
 
 ## Các thông tin cần thiết cho file .env
 - PORT: Cổng mà server sẽ chạy
-- MONGODB_URI: Đường dẫn đến database MongoDB
+- MONGO_URI: Đường dẫn đến database MongoDB
 
 Goodluck
