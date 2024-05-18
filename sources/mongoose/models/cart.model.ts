@@ -7,6 +7,8 @@ export interface Cart {
     quantity: number;
     size: string;
     price: number;
+    category: string;
+    productName: string;
   };
   createdAt: Date;
   updatedAt: Date;
