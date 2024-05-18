@@ -5,6 +5,8 @@ export interface Cart {
   items: {
     product: Types.ObjectId;
     quantity: number;
+    size: string;
+    price: number;
   };
   createdAt: Date;
   updatedAt: Date;
@@ -15,6 +17,8 @@ export const CartSchema = new Schema<Cart>({
   items: {
     product: { type: Schema.Types.ObjectId, ref: 'Product', required: true },
     quantity: { type: Number, required: true },
+    size: { type: String, required: true },
+    price: { type: Number, required: true },
   },
 
   createdAt: { type: 'Date', default: Date.now },
