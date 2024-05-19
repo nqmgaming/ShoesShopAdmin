@@ -33,7 +33,7 @@ npm run dev
 
 This command starts the server using `ts-node`, which allows you to run TypeScript code without having to compile it first.
 
-The server will start on the port specified in your `.env` file (default is 5556). You can access the admin panel by navigating to `http://localhost:<PORT>/admin` in your web browser.
+The server will start on the port specified in your `.env` file (default is 3000). You can access the admin panel by navigating to `http://localhost:<PORT>/admin` in your web browser.
 
 ## Contributing
 
