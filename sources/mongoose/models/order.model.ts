@@ -13,8 +13,17 @@ export interface Order {
     email: String,
     total: number,
     time: Date,
+    status: string;
     createdAt: Date;
     updatedAt: Date;
+}
+
+enum OrderStatus {
+    Pending = 'Pending',
+    Processing = 'Processing',
+    Shipped = 'Shipped',
+    Delivered = 'Delivered',
+    Cancelled = 'Cancelled',
 }
 
 export const OrderSchema = new Schema<Order>({
@@ -51,6 +60,11 @@ export const OrderSchema = new Schema<Order>({
     time: {
         type: Date,
         default: Date.now,
+    },
+    status: {
+        type: String,
+        enum: Object.values(OrderStatus),
+        default: OrderStatus.Pending,
     },
     createdAt: {type: 'Date', default: Date.now},
     updatedAt: {type: 'Date', default: Date.now},

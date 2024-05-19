@@ -22,7 +22,11 @@ export const UserSchema = new Schema<User>({
         publicId: {type: String, required: false},
     },
     email: {
-        type: String, required: true, unique: true,
+        type: String,
+        required: true,
+        unique: true,
+        lowercase: true,
+        trim: true,
         match: [/^\S+@\S+\.\S+$/, 'Please use a valid email address.'],
     },
     password: {
