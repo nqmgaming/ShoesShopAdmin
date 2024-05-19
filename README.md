@@ -35,14 +35,6 @@ This command starts the server using `ts-node`, which allows you to run TypeScri
 
 The server will start on the port specified in your `.env` file (default is 5556). You can access the admin panel by navigating to `http://localhost:<PORT>/admin` in your web browser.
 
-## Building the Project
-
-To compile the TypeScript code into JavaScript, use the following command:
-
-```bash
-npm run build
-```
-
 This command generates JavaScript files in the `dist` directory.
 
 ## Contributing
