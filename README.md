@@ -35,8 +35,6 @@ This command starts the server using `ts-node`, which allows you to run TypeScri
 
 The server will start on the port specified in your `.env` file (default is 5556). You can access the admin panel by navigating to `http://localhost:<PORT>/admin` in your web browser.
 
-This command generates JavaScript files in the `dist` directory.
-
 ## Contributing
 
 Contributions to the project are welcome. Please ensure that you follow the existing code style and run tests before submitting a pull request.
