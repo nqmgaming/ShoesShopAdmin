@@ -14,6 +14,7 @@ export interface Order {
     total: number,
     time: Date,
     status: string;
+    paymentMethod: string;
     createdAt: Date;
     updatedAt: Date;
 }
@@ -24,6 +25,13 @@ enum OrderStatus {
     Shipped = 'Shipped',
     Delivered = 'Delivered',
     Cancelled = 'Cancelled',
+}
+
+enum PaymentMethod {
+    Cash = 'Cash',
+    Card = 'CC',
+    PayPal = 'PayPal',
+
 }
 
 export const OrderSchema = new Schema<Order>({
@@ -65,6 +73,11 @@ export const OrderSchema = new Schema<Order>({
         type: String,
         enum: Object.values(OrderStatus),
         default: OrderStatus.Pending,
+    },
+    paymentMethod: {
+        type: String,
+        enum: Object.values(PaymentMethod),
+        default: PaymentMethod.Cash,
     },
     createdAt: {type: 'Date', default: Date.now},
     updatedAt: {type: 'Date', default: Date.now},
