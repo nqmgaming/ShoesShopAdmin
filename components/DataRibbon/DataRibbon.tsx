@@ -12,7 +12,7 @@ const DataRibbon = () => {
         {
           headers: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NjQ3MDllMGM5MGEwODY0MmJkOGM1ZjAiLCJpYXQiOjE3MTU5NTgyOTB9.NkWUzkbquiUouZEpUdVqdNpZOspED6kC_ZF2P6UZRIUs",
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NjQ3MDllMGM5MGEwODY0MmJkOGM1ZjAiLCJpYXQiOjE3MTU5NTgyOTB9.NkWUzkbquiUouZEpUdVqdNpZOspED6kC_ZF2P6UZRIU",
           },
         }
       );
@@ -25,7 +25,7 @@ const DataRibbon = () => {
   useEffect(() => {
     getTotalProduct();
     console.log(totalProduct);
-  });
+  },[]);
 
   //Giao dien
   return (
@@ -52,7 +52,7 @@ const DataRibbon = () => {
       <Grid>
         <DataCard
           title={"Total Product"}
-          value={"16"}
+          value={totalProduct.totalProducts}
           description={"The total sales of the current financial year"}
         />
       </Grid>
