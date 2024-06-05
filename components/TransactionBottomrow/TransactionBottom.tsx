@@ -2,7 +2,7 @@ import Grid from "@mui/material/Grid";
 import React from "react";
 import DataChart from "../DataChart/DataChart";
 import Paper from "@mui/material/Paper";
-import { doughnutChartData } from "../MockDatachart";
+import { doughnutChartData, EUKId } from "../MockDatachart";
 
 const TransactionBottomRow = () => {
   return (
@@ -37,7 +37,7 @@ const TransactionBottomRow = () => {
             padding:'0.5rem 1rem',
             margin:'0'
           }}>Các Size Giày EU Kid</p>
-          <DataChart type={"doughnut"} data={doughnutChartData} />
+          <DataChart type={"doughnut"} data={EUKId} />
         </Paper>
       </Grid>
     </Grid>
