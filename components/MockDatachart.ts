@@ -18,9 +18,21 @@ export const doughnutChartData = {
   datasets: [
     {
       label: "Transaction Dataset",
-      data: [300, 50, 100],
+      data: [40,40.5 ,41, 41.5, 42, 42.5,43,43.5,44,44.5,45,46,47,47.5 ],
       backgroundColor: ["rgb(255,137,168)", "rgb(178,3,106)", "rgb(165,7,42)"],
-      hoverOffset: 4,
+      hoverOffset: 14,
+    },
+  ],
+};
+
+export const EUKId = {
+  labels: ["Red", "Blue", "Yellow"],
+  datasets: [
+    {
+      label: "Transaction Dataset",
+      data: [40,40.5 ,41, 41.5, 42, 42.5,43,43.5,44,44.5,45,46,47,47.5 ],
+      backgroundColor: ["rgb(25,137,168)", "rgb(18,3,106)", "rgb(16,7,42)"],
+      hoverOffset: 14,
     },
   ],
 };

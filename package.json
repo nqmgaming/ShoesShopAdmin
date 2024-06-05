@@ -7,7 +7,7 @@
     "@mui/icons-material": "^5.15.18",
     "@mui/material": "^5.15.18",
     "adminjs": "^6.8.2",
-    "axios": "^1.6.8",
+    "axios": "^1.7.2",
     "chart.js": "^4.4.3",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
