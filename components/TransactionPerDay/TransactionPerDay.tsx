@@ -68,10 +68,7 @@ const TransactionsPerDay = () => {
                 fontSize: "1.2rem",
               }}
             >
-              <Typography>1.275</Typography>
-              <Typography fontSize={14}>
-                428.7%
-              </Typography>
+              <Typography>16</Typography>
             </div>
           </Card>
           <Card
@@ -95,9 +92,9 @@ const TransactionsPerDay = () => {
                 fontSize: "1.2rem",
               }}
             >
-              <Typography>4.40%</Typography>
+              <Typography>4</Typography>
               <Typography fontSize={14}>
-                899.4%
+                100%
               </Typography>
             </div>
           </Card>
@@ -122,9 +119,9 @@ const TransactionsPerDay = () => {
                 fontSize: "1.2rem",
               }}
             >
-              <Typography>0</Typography>
+              <Typography>0%</Typography>
               <Typography fontSize={14}>
-                0
+                0%
               </Typography>
             </div>
           </Card>
