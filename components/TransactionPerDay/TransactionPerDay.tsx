@@ -1,8 +1,9 @@
-import React from "react";
 import { Card, Grid, Paper, Typography } from "@mui/material";
 import { useTheme } from "@mui/system";
 import DataChart from "../DataChart/DataChart";
 import { lineChartData } from "../MockDatachart";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 export type TransactionCardType = {
   title: string;
@@ -12,6 +13,47 @@ export type TransactionCardType = {
 
 const TransactionsPerDay = () => {
   const theme = useTheme();
+
+  const API_KEY = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NjQ3MDllMGM5MGEwODY0MmJkOGM1ZjAiLCJpYXQiOjE3MTU5NTgyOTB9.NkWUzkbquiUouZEpUdVqdNpZOspED6kC_ZF2P6UZRIU"
+
+  const [totalProduct, setProduct] = useState([]);
+  const [totalUser, setTotalUser] = useState([]);
+  const [totalOder, setTotalOder] = useState([]);
+  const [Doanhthu, setDoanhThu] = useState([]);
+
+  const getData = async () => {
+    try {
+      const product = await axios.get(
+        "https://shoes-shop-api-unl0.onrender.com/statistical/totalProducts",
+        {
+          headers: {
+            Authorization:
+              API_KEY,
+          },
+        }
+      );
+
+      const oder = await axios.get(
+        "https://shoes-shop-api-unl0.onrender.com/statistical/totalOrders",
+        {
+          headers: {
+            Authorization:
+              API_KEY,
+          },
+        }
+      );
+
+      setProduct(product.data);
+      setTotalOder(oder.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getData();
+    console.log(totalProduct);
+  },[]);
 
   return (
     <Grid
@@ -35,7 +77,7 @@ const TransactionsPerDay = () => {
             width: "100%",
           }}
         >
-          <Typography>TransActions per day</Typography>
+          <Typography>Thống kê theo ngày</Typography>
           <DataChart type={"line"} data={lineChartData} />
         </div>
         <div
@@ -68,7 +110,7 @@ const TransactionsPerDay = () => {
                 fontSize: "1.2rem",
               }}
             >
-              <Typography>16</Typography>
+              <Typography>{totalProduct.totalProducts}</Typography>
             </div>
           </Card>
           <Card
@@ -92,9 +134,9 @@ const TransactionsPerDay = () => {
                 fontSize: "1.2rem",
               }}
             >
-              <Typography>4</Typography>
+              <Typography>{totalOder.totalOrders}</Typography>
               <Typography fontSize={14}>
-                100%
+                Tỉ lệ giao hàng thành công :100%
               </Typography>
             </div>
           </Card>
@@ -119,9 +161,9 @@ const TransactionsPerDay = () => {
                 fontSize: "1.2rem",
               }}
             >
-              <Typography>0%</Typography>
+              <Typography>Đơn đã hoàn trả :0</Typography>
               <Typography fontSize={14}>
-                0%
+                Tỉ lệ hoàn trả hàng :0%
               </Typography>
             </div>
           </Card>
