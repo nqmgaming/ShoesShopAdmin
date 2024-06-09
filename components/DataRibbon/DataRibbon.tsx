@@ -4,26 +4,66 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const DataRibbon = () => {
-  const [totalProduct, setProduct] = useState({});
-  const getTotalProduct = async () => {
+  const API_KEY = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NjQ3MDllMGM5MGEwODY0MmJkOGM1ZjAiLCJpYXQiOjE3MTU5NTgyOTB9.NkWUzkbquiUouZEpUdVqdNpZOspED6kC_ZF2P6UZRIU"
+
+  const [totalProduct, setProduct] = useState([]);
+  const [totalUser, setTotalUser] = useState([]);
+  const [totalOder, setTotalOder] = useState([]);
+  const [Doanhthu, setDoanhThu] = useState([]);
+  
+  const getData = async () => {
     try {
-      const res = await axios.get(
+      const product = await axios.get(
         "https://shoes-shop-api-unl0.onrender.com/statistical/totalProducts",
         {
           headers: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NjQ3MDllMGM5MGEwODY0MmJkOGM1ZjAiLCJpYXQiOjE3MTU5NTgyOTB9.NkWUzkbquiUouZEpUdVqdNpZOspED6kC_ZF2P6UZRIU",
+              API_KEY,
           },
         }
       );
-      setProduct(res.data);
+
+      const user = await axios.get(
+        "https://shoes-shop-api-unl0.onrender.com/statistical/totalUsers",
+        {
+          headers: {
+            Authorization:
+              API_KEY,
+          },
+        }
+      );
+
+      const oder = await axios.get(
+        "https://shoes-shop-api-unl0.onrender.com/statistical/totalOrders",
+        {
+          headers: {
+            Authorization:
+              API_KEY,
+          },
+        }
+      );
+
+      const doanhthu = await axios.get(
+        "https://shoes-shop-api-unl0.onrender.com/statistical/totalRevenue",
+        {
+          headers: {
+            Authorization:
+              API_KEY,
+          },
+        }
+      );
+
+      setProduct(product.data);
+      setTotalUser(user.data);
+      setTotalOder(oder.data);
+      setDoanhThu(doanhthu.data);
     } catch (error) {
       console.log(error);
     }
   };
 
   useEffect(() => {
-    getTotalProduct();
+    getData();
     console.log(totalProduct);
   },[]);
 
@@ -45,7 +85,7 @@ const DataRibbon = () => {
       >
         <DataCard
           title={"Total User"}
-          value={""}
+          value={totalUser.totalUsers}
           description={"The totals of all users in the current database"}
         />
       </Grid>
@@ -59,7 +99,7 @@ const DataRibbon = () => {
       <Grid>
         <DataCard
           title={"Total Order"}
-          value={"4"}
+          value={totalOder.totalOrders}
           description={
             "The average order value for all sales this current financial year"
           }
@@ -72,7 +112,7 @@ const DataRibbon = () => {
       >
         <DataCard
           title={"Tổng doanh thu"}
-          value={"18480 $"}
+          value={Doanhthu.totalRevenue}
           description={"How many pitches become sales"}
         />
       </Grid>
