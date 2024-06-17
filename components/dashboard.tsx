@@ -3,6 +3,7 @@ import React from 'react';
 import DataRibbon from './DataRibbon';
 import TransactionsPerDay from './TransactionPerDay/TransactionPerDay';
 import TransactionBottomRow from './TransactionBottomrow/TransactionBottom';
+import TableDoanhSo from './TableDoanhSo';
 import Footer from './Footer';
 
 export const Dashboard: React.FC = () => {
@@ -10,7 +11,7 @@ export const Dashboard: React.FC = () => {
         <Box>
             <DataRibbon></DataRibbon>
             <TransactionsPerDay></TransactionsPerDay>
-            <TransactionBottomRow></TransactionBottomRow>
+            <TableDoanhSo></TableDoanhSo>
             <Footer></Footer>
         </Box>
     )
