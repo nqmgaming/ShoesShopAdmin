@@ -30,7 +30,7 @@ enum OrderStatus {
 enum PaymentMethod {
     Cash = 'Cash',
     Card = 'CC',
-    PayPal = 'PayPal',
+    Paypal = 'Paypal',
 
 }
 

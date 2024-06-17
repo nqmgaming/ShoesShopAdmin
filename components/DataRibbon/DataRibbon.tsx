@@ -10,11 +10,11 @@ const DataRibbon = () => {
   const [totalUser, setTotalUser] = useState([]);
   const [totalOder, setTotalOder] = useState([]);
   const [Doanhthu, setDoanhThu] = useState([]);
-  
+
   const getData = async () => {
     try {
       const product = await axios.get(
-        "https://shoes-shop-api-unl0.onrender.com/statistical/totalProducts",
+        "http://192.168.0.197:5555/statistical/totalProducts",
         {
           headers: {
             Authorization:
@@ -24,7 +24,7 @@ const DataRibbon = () => {
       );
 
       const user = await axios.get(
-        "https://shoes-shop-api-unl0.onrender.com/statistical/totalUsers",
+        "http://192.168.0.197:5555/statistical/totalUsers",
         {
           headers: {
             Authorization:
@@ -34,7 +34,7 @@ const DataRibbon = () => {
       );
 
       const oder = await axios.get(
-        "https://shoes-shop-api-unl0.onrender.com/statistical/totalOrders",
+        "http://192.168.0.197:5555/statistical/totalOrders",
         {
           headers: {
             Authorization:
@@ -44,7 +44,7 @@ const DataRibbon = () => {
       );
 
       const doanhthu = await axios.get(
-        "https://shoes-shop-api-unl0.onrender.com/statistical/totalRevenue",
+        "http://192.168.0.197:5555/statistical/totalRevenue",
         {
           headers: {
             Authorization:
