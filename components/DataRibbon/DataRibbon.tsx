@@ -57,6 +57,9 @@ const DataRibbon = () => {
       setTotalUser(user.data);
       setTotalOder(oder.data);
       setDoanhThu(doanhthu.data);
+
+      console.log(setProduct, setTotalOder, setTotalUser, setDoanhThu);
+      
     } catch (error) {
       console.log(error);
     }
