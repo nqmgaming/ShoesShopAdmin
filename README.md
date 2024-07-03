@@ -41,4 +41,4 @@ Contributions to the project are welcome. Please ensure that you follow the exis
 
 ## License
 
-This project is licensed under the ISC license.
+This project is licensed under the MIT license.
